@@ -35,8 +35,10 @@ jobs:
       - name: Prepare Pages site
         run: |
           rm -rf site
-          mkdir site
+          mkdir -p site/lib
           cp -R web/. site/
+          cp -R src/. site/lib/
+          cp -R alt/. site/lib/
           touch site/.nojekyll
 
       - name: Configure Pages
